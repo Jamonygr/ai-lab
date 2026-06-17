@@ -1,0 +1,17 @@
+.terraform/
+terraform.tfstate
+terraform.tfstate.*
+terraform.tfvars
+*.tfplan
+*.tfplan.json
+
+.env
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+exercises/python/speech-output.wav
+
+.DS_Store
+Thumbs.db

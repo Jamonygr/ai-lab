@@ -1,0 +1,52 @@
+# =============================================================================
+# AI Lab - Example Variable Values
+# =============================================================================
+
+ctx = {
+  project     = "ailab"
+  location    = "westeurope"
+  environment = "lab"
+  owner       = "Your Name"
+  tags = {
+    CostCenter = "Training"
+    Purpose    = "Beginner AI Lab"
+  }
+}
+
+# -----------------------------------------------------------------------------
+# MASTER CONTROL PANEL
+# -----------------------------------------------------------------------------
+# Beginner default: core AI services, Content Safety, storage, Key Vault, and
+# monitoring. Cost- or quota-sensitive components stay off until needed.
+
+deploy_ai_services    = true
+deploy_content_safety = true
+deploy_ai_search      = false
+deploy_azure_openai   = false
+deploy_app_hosting    = false
+
+# Keep public endpoints enabled for beginner local Python exercises.
+# Disable this only when adding private networking later.
+enable_public_network_access       = true
+enable_foundry_project_management  = true
+
+# -----------------------------------------------------------------------------
+# SKUs
+# -----------------------------------------------------------------------------
+
+ai_services_sku_name    = "S0"
+content_safety_sku_name = "S0"
+ai_search_sku           = "free"
+openai_sku_name         = "S0"
+
+# -----------------------------------------------------------------------------
+# Optional Azure OpenAI model deployment
+# -----------------------------------------------------------------------------
+# Only enable deploy_azure_openai when your subscription has access, quota, and
+# regional model availability.
+
+openai_deployment_name = "gpt-4o-mini-lab"
+openai_model_name      = "gpt-4o-mini"
+openai_model_version   = "2024-07-18"
+openai_model_capacity  = 1
+

@@ -1,0 +1,22 @@
+<svg width="1000" height="260" viewBox="0 0 1000 260" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">AI Lab banner</title>
+  <desc id="desc">A clean Azure AI learning lab banner with connected service blocks.</desc>
+  <rect width="1000" height="260" fill="#0B1220"/>
+  <rect x="40" y="38" width="920" height="184" rx="18" fill="#111C2F" stroke="#2E5C88" stroke-width="2"/>
+  <circle cx="130" cy="130" r="54" fill="#0078D4" opacity="0.95"/>
+  <path d="M101 130h58M130 101v58M113 113l34 34M147 113l-34 34" stroke="white" stroke-width="7" stroke-linecap="round"/>
+  <text x="220" y="112" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="48" font-weight="700">AI Lab</text>
+  <text x="222" y="152" fill="#BFD7EE" font-family="Segoe UI, Arial, sans-serif" font-size="22">Beginner Azure AI fundamentals with Terraform and Python</text>
+  <g font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="600">
+    <rect x="660" y="68" width="115" height="42" rx="8" fill="#173B57" stroke="#58A6FF"/>
+    <text x="685" y="94" fill="#E6F2FF">Language</text>
+    <rect x="795" y="68" width="115" height="42" rx="8" fill="#214A34" stroke="#69DB7C"/>
+    <text x="830" y="94" fill="#E8FFF0">Vision</text>
+    <rect x="660" y="130" width="115" height="42" rx="8" fill="#493B16" stroke="#FFD166"/>
+    <text x="698" y="156" fill="#FFF7DA">Speech</text>
+    <rect x="795" y="130" width="115" height="42" rx="8" fill="#542D3D" stroke="#FF8FAB"/>
+    <text x="820" y="156" fill="#FFE9EF">Safety</text>
+  </g>
+  <path d="M775 89h20M717 110v20M775 151h20" stroke="#7DD3FC" stroke-width="2" stroke-linecap="round"/>
+</svg>
+

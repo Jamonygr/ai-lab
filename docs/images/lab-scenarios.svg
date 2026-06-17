@@ -1,0 +1,32 @@
+<svg width="1000" height="420" viewBox="0 0 1000 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">AI Lab scenarios</title>
+  <desc id="desc">A scenario map for beginner AI exercises.</desc>
+  <rect width="1000" height="420" fill="#FFFFFF"/>
+  <text x="48" y="58" fill="#111827" font-family="Segoe UI, Arial, sans-serif" font-size="32" font-weight="700">Beginner Lab Scenarios</text>
+  <g font-family="Segoe UI, Arial, sans-serif">
+    <rect x="50" y="100" width="280" height="110" rx="10" fill="#E0F2FE" stroke="#0284C7"/>
+    <text x="78" y="136" fill="#075985" font-size="20" font-weight="700">1. Understand Text</text>
+    <text x="78" y="169" fill="#0F172A" font-size="15">Sentiment, entities, and PII</text>
+
+    <rect x="360" y="100" width="280" height="110" rx="10" fill="#ECFDF5" stroke="#059669"/>
+    <text x="388" y="136" fill="#065F46" font-size="20" font-weight="700">2. Read Images</text>
+    <text x="388" y="169" fill="#0F172A" font-size="15">OCR from image URLs</text>
+
+    <rect x="670" y="100" width="280" height="110" rx="10" fill="#FFF7ED" stroke="#F97316"/>
+    <text x="698" y="136" fill="#9A3412" font-size="20" font-weight="700">3. Work with Speech</text>
+    <text x="698" y="169" fill="#0F172A" font-size="15">Text-to-speech basics</text>
+
+    <rect x="50" y="250" width="280" height="110" rx="10" fill="#F5F3FF" stroke="#7C3AED"/>
+    <text x="78" y="286" fill="#4C1D95" font-size="20" font-weight="700">4. Translate</text>
+    <text x="78" y="319" fill="#0F172A" font-size="15">Detect and translate text</text>
+
+    <rect x="360" y="250" width="280" height="110" rx="10" fill="#FFE4E6" stroke="#E11D48"/>
+    <text x="388" y="286" fill="#9F1239" font-size="20" font-weight="700">5. Review Safety</text>
+    <text x="388" y="319" fill="#0F172A" font-size="15">Inspect risky user content</text>
+
+    <rect x="670" y="250" width="280" height="110" rx="10" fill="#F1F5F9" stroke="#475569"/>
+    <text x="698" y="286" fill="#334155" font-size="20" font-weight="700">6. Optional RAG</text>
+    <text x="698" y="319" fill="#0F172A" font-size="15">Search tiny docs before answering</text>
+  </g>
+</svg>
+

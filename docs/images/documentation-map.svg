@@ -1,0 +1,22 @@
+<svg width="1000" height="360" viewBox="0 0 1000 360" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">AI Lab documentation map</title>
+  <desc id="desc">Documentation entry points for architecture, scenarios, testing, reference, and workbook.</desc>
+  <rect width="1000" height="360" fill="#F8FAFC"/>
+  <text x="50" y="58" fill="#0F172A" font-family="Segoe UI, Arial, sans-serif" font-size="32" font-weight="700">Documentation Map</text>
+  <g font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">
+    <rect x="70" y="110" width="170" height="80" rx="10" fill="#DBEAFE" stroke="#2563EB"/>
+    <text x="112" y="158" fill="#1E3A8A">README</text>
+    <rect x="300" y="110" width="170" height="80" rx="10" fill="#DCFCE7" stroke="#16A34A"/>
+    <text x="335" y="158" fill="#166534">Architecture</text>
+    <rect x="530" y="110" width="170" height="80" rx="10" fill="#FEF3C7" stroke="#D97706"/>
+    <text x="572" y="158" fill="#92400E">Scenarios</text>
+    <rect x="760" y="110" width="170" height="80" rx="10" fill="#FCE7F3" stroke="#DB2777"/>
+    <text x="811" y="158" fill="#9D174D">Testing</text>
+    <rect x="185" y="245" width="220" height="70" rx="10" fill="#F1F5F9" stroke="#475569"/>
+    <text x="250" y="288" fill="#334155">Reference</text>
+    <rect x="595" y="245" width="220" height="70" rx="10" fill="#EDE9FE" stroke="#7C3AED"/>
+    <text x="643" y="288" fill="#5B21B6">Workbook</text>
+  </g>
+  <path d="M240 150H300M470 150H530M700 150H760M385 190L300 245M615 190L705 245" stroke="#94A3B8" stroke-width="3" stroke-linecap="round"/>
+</svg>
+

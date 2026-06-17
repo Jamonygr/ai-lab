@@ -1,0 +1,40 @@
+<svg width="1000" height="520" viewBox="0 0 1000 520" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">AI Lab architecture overview</title>
+  <desc id="desc">Terraform deploys core Azure resources and AI services used by Python exercises.</desc>
+  <rect width="1000" height="520" fill="#F8FAFC"/>
+  <text x="50" y="56" fill="#0F172A" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="700">AI Lab Architecture</text>
+  <text x="52" y="88" fill="#475569" font-family="Segoe UI, Arial, sans-serif" font-size="16">Low-cost beginner Azure AI services, deployed with Terraform and explored with Python scripts.</text>
+
+  <rect x="50" y="130" width="210" height="270" rx="12" fill="#E0F2FE" stroke="#0284C7" stroke-width="2"/>
+  <text x="78" y="165" fill="#0C4A6E" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700">Terraform Core</text>
+  <text x="78" y="205" fill="#0F172A" font-family="Segoe UI, Arial, sans-serif" font-size="15">Resource Group</text>
+  <text x="78" y="235" fill="#0F172A" font-family="Segoe UI, Arial, sans-serif" font-size="15">Storage Account</text>
+  <text x="78" y="265" fill="#0F172A" font-family="Segoe UI, Arial, sans-serif" font-size="15">Key Vault</text>
+  <text x="78" y="295" fill="#0F172A" font-family="Segoe UI, Arial, sans-serif" font-size="15">Log Analytics</text>
+  <text x="78" y="325" fill="#0F172A" font-family="Segoe UI, Arial, sans-serif" font-size="15">Application Insights</text>
+
+  <rect x="390" y="115" width="260" height="300" rx="12" fill="#ECFDF5" stroke="#059669" stroke-width="2"/>
+  <text x="418" y="150" fill="#065F46" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700">Foundry Tools</text>
+  <text x="418" y="188" fill="#0F172A" font-family="Segoe UI, Arial, sans-serif" font-size="15">Language sentiment</text>
+  <text x="418" y="218" fill="#0F172A" font-family="Segoe UI, Arial, sans-serif" font-size="15">PII and entities</text>
+  <text x="418" y="248" fill="#0F172A" font-family="Segoe UI, Arial, sans-serif" font-size="15">Vision OCR</text>
+  <text x="418" y="278" fill="#0F172A" font-family="Segoe UI, Arial, sans-serif" font-size="15">Speech basics</text>
+  <text x="418" y="308" fill="#0F172A" font-family="Segoe UI, Arial, sans-serif" font-size="15">Translator</text>
+  <text x="418" y="348" fill="#334155" font-family="Segoe UI, Arial, sans-serif" font-size="13">AIServices account</text>
+
+  <rect x="740" y="120" width="210" height="110" rx="12" fill="#FFF7ED" stroke="#F97316" stroke-width="2"/>
+  <text x="768" y="155" fill="#9A3412" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700">Content Safety</text>
+  <text x="768" y="190" fill="#0F172A" font-family="Segoe UI, Arial, sans-serif" font-size="15">Prompt and text review</text>
+
+  <rect x="740" y="270" width="210" height="130" rx="12" fill="#F5F3FF" stroke="#7C3AED" stroke-width="2"/>
+  <text x="768" y="305" fill="#4C1D95" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700">Optional</text>
+  <text x="768" y="340" fill="#0F172A" font-family="Segoe UI, Arial, sans-serif" font-size="15">AI Search</text>
+  <text x="768" y="370" fill="#0F172A" font-family="Segoe UI, Arial, sans-serif" font-size="15">Azure OpenAI</text>
+
+  <path d="M260 265H390" stroke="#64748B" stroke-width="3" stroke-linecap="round"/>
+  <path d="M650 190H740" stroke="#64748B" stroke-width="3" stroke-linecap="round"/>
+  <path d="M650 335H740" stroke="#64748B" stroke-width="3" stroke-linecap="round"/>
+  <rect x="360" y="450" width="280" height="44" rx="8" fill="#0F172A"/>
+  <text x="405" y="478" fill="white" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="600">Python exercises consume outputs</text>
+</svg>
+
