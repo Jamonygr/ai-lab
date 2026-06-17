@@ -55,6 +55,7 @@ jobs:
         uses: actions/setup-go@v6
         with:
           go-version: "1.21"
+          cache-dependency-path: tests/go.mod
 
       - name: Run Go tests
         working-directory: tests
