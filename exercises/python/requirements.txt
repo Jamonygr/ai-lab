@@ -1,6 +1,6 @@
 azure-core>=1.30.0
+azure-cognitiveservices-speech>=1.44.0
 azure-search-documents>=11.4.0
 python-dotenv>=1.0.0
 pytest>=7.0.0
 requests>=2.31.0
-

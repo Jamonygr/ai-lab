@@ -35,7 +35,28 @@ warn[msg] {
     msg := sprintf("Azure OpenAI deployment '%s' is cost/quota sensitive; confirm it is intentional", [resource.address])
 }
 
+warn[msg] {
+    resource := input.resource_changes[_]
+    resource.type == "azurerm_cognitive_account"
+    resource.change.actions[_] == "create"
+    resource.change.after.kind == "FormRecognizer"
+    msg := sprintf("Document Intelligence account '%s' is usage-based; confirm the document extraction track is intentional", [resource.address])
+}
+
+warn[msg] {
+    resource := input.resource_changes[_]
+    resource.type == "azurerm_ai_foundry"
+    resource.change.actions[_] == "create"
+    msg := sprintf("Foundry hub '%s' is an advanced agent/evaluation resource; confirm quota and class scope", [resource.address])
+}
+
+warn[msg] {
+    resource := input.resource_changes[_]
+    resource.type == "azurerm_private_endpoint"
+    resource.change.actions[_] == "create"
+    msg := sprintf("Private endpoint '%s' changes connectivity and DNS expectations for local exercises", [resource.address])
+}
+
 array_contains(arr, elem) {
     arr[_] == elem
 }
-

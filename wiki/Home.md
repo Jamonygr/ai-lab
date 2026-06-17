@@ -11,6 +11,8 @@ Welcome to the AI Lab wiki. Start with the [documentation index](README.md), the
 | [Teardown runbook](runbooks/teardown.md) | Destroy Azure resources and clean local artifacts. |
 | [Security and cost guide](security-and-cost.md) | Secrets, cost controls, and responsible defaults. |
 | [Troubleshooting](troubleshooting.md) | Fix common Terraform, Azure, and Python failures. |
+| [Advanced tracks](advanced-tracks.md) | All optional enrichment tracks and feature flags. |
 | [Architecture overview](architecture/overview.md) | Understand the Terraform module layout. |
 | [Scenarios](scenarios/README.md) | Work through the hands-on exercises. |
 | [Testing guide](testing/lab-testing-guide.md) | Validate Terraform, Python, policies, and live Azure checks. |
+| [CI/CD checks](reference/cicd.md) | Understand automated validation and local pre-push gates. |

@@ -45,7 +45,7 @@ Terraform state backups and saved plans can contain sensitive values after apply
 
 ```powershell
 Remove-Item -Force terraform.tfstate, terraform.tfstate.backup, *.tfplan -ErrorAction SilentlyContinue
-Remove-Item -Force exercises/python/speech-output.wav -ErrorAction SilentlyContinue
+Remove-Item -Force exercises/python/*-output.wav, exercises/python/*-output.json, exercises/python/*-output.jsonl -ErrorAction SilentlyContinue
 ```
 
 Keep `terraform.tfvars` only if you plan to redeploy soon and it does not contain secrets.
@@ -59,6 +59,8 @@ Azure services may keep soft-deleted records for recovery even after active reso
 | Resource group | Should be fully gone after destroy. |
 | Key Vault | Soft delete is enabled for seven days; purge protection is disabled. |
 | Cognitive Services | Deleted accounts may briefly appear in provider recovery views. |
+| Document Intelligence | Deleted account may briefly appear as a Form Recognizer/Cognitive Services account. |
+| Private endpoints | Deleted with the resource group, but DNS/cache behavior may linger locally. |
 | Storage account | Deleted with the resource group. |
 
 Only purge soft-deleted resources when you are sure the lab resource names are no longer needed for recovery.

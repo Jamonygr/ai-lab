@@ -72,11 +72,42 @@ Evidence:
 - [ ] Apply Terraform.
 - [ ] Add Search endpoint and key to `.env`.
 - [ ] Run `07_search_rag_optional.py`.
+- [ ] Run `08_search_rag_advanced.py`.
 
 Evidence:
 
 - Search query results.
 - Notes on why retrieval helps ground an answer.
+- Advanced RAG output with source paths.
+
+## Phase 5A: Optional Document and Vision upgrades
+
+- [ ] Set `deploy_document_intelligence = true`.
+- [ ] Apply Terraform.
+- [ ] Add Document Intelligence endpoint and key to `.env`.
+- [ ] Run `09_document_intelligence_layout.py`.
+- [ ] Run `10_vision_image_analysis.py`.
+
+Evidence:
+
+- Document page, paragraph, and table counts.
+- Vision captions, tags, object, people, and read output.
+
+## Phase 5B: Optional Responsible AI, Speech, Agents, and Evaluation
+
+- [ ] Run `11_content_safety_guardrails.py`.
+- [ ] Run `12_speech_pronunciation_assessment.py`.
+- [ ] Review `13_foundry_agent_blueprint.py`.
+- [ ] Run `14_observability_evaluation.py`.
+- [ ] Optional: set `deploy_ai_foundry = true`.
+- [ ] Optional: set `deploy_observability_alerts = true`.
+
+Evidence:
+
+- Prompt Shields and protected material response.
+- Pronunciation scores.
+- Agent tool catalog and handoff rules.
+- Evaluation JSONL summary.
 
 ## Phase 6: Teardown
 

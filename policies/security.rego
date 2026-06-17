@@ -25,3 +25,9 @@ deny[msg] {
     msg := sprintf("Resource '%s' must include an Owner tag", [resource.address])
 }
 
+warn[msg] {
+    resource := input.resource_changes[_]
+    resource.type == "azurerm_key_vault_secret"
+    resource.change.actions[_] == "create"
+    msg := sprintf("Key Vault secret '%s' stores service credentials; confirm RBAC and cleanup expectations", [resource.address])
+}

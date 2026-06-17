@@ -49,3 +49,7 @@ output "application_insights_connection_string" {
   sensitive   = true
 }
 
+output "application_insights_id" {
+  description = "Application Insights resource ID."
+  value       = azurerm_application_insights.lab.id
+}

@@ -30,8 +30,12 @@ First-run settings should normally stay:
 deploy_ai_services    = true
 deploy_content_safety = true
 deploy_ai_search      = false
+deploy_document_intelligence = false
 deploy_azure_openai   = false
+deploy_ai_foundry     = false
 deploy_app_hosting    = false
+deploy_private_networking = false
+deploy_observability_alerts = false
 ```
 
 ## 3. Validate before apply
@@ -118,7 +122,41 @@ Apply again, add `AI_SEARCH_ENDPOINT` and `AI_SEARCH_KEY` to `.env`, then run:
 
 The script creates or updates a tiny index named by `AI_SEARCH_INDEX`, uploads sample documents, and prints top search results.
 
-## 8. Live Azure tag check
+Run the advanced RAG exercise after the simple Search exercise works:
+
+```powershell
+.\exercises\python\.venv\Scripts\python.exe exercises\python\08_search_rag_advanced.py
+```
+
+## 8. Optional Document Intelligence
+
+Enable:
+
+```hcl
+deploy_document_intelligence = true
+```
+
+Apply again, add `DOCUMENT_INTELLIGENCE_ENDPOINT` and `DOCUMENT_INTELLIGENCE_KEY` to `.env`, then run:
+
+```powershell
+.\exercises\python\.venv\Scripts\python.exe exercises\python\09_document_intelligence_layout.py
+```
+
+## 9. Optional advanced AI scenarios
+
+These use default services unless noted:
+
+```powershell
+.\exercises\python\.venv\Scripts\python.exe exercises\python\10_vision_image_analysis.py
+.\exercises\python\.venv\Scripts\python.exe exercises\python\11_content_safety_guardrails.py
+.\exercises\python\.venv\Scripts\python.exe exercises\python\12_speech_pronunciation_assessment.py
+.\exercises\python\.venv\Scripts\python.exe exercises\python\13_foundry_agent_blueprint.py
+.\exercises\python\.venv\Scripts\python.exe exercises\python\14_observability_evaluation.py
+```
+
+Use `deploy_ai_foundry = true` for Foundry infrastructure and `deploy_observability_alerts = true` for call-volume alerts.
+
+## 10. Live Azure tag check
 
 If Go is installed:
 
@@ -132,6 +170,6 @@ cd ..
 
 The test skips when environment variables are not set.
 
-## 9. Finish with teardown
+## 11. Finish with teardown
 
 Follow [Teardown runbook](teardown.md) after every temporary validation run.

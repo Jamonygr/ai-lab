@@ -9,7 +9,7 @@
   <img src="docs/images/hero-ai-lab.svg" alt="AI Lab banner" width="1000" />
 </p>
 
-AI Lab is a beginner-friendly, Terraform-first Azure AI sandbox. It deploys a small set of low-cost Microsoft Foundry Tools resources, formerly Azure AI services, and pairs them with Python exercises for text, image, speech, translation, content safety, and optional search/RAG.
+AI Lab is a beginner-friendly, Terraform-first Azure AI sandbox. It deploys a small set of low-cost Microsoft Foundry Tools resources, formerly Azure AI services, and pairs them with Python exercises for text, image, speech, translation, content safety, optional search/RAG, document extraction, Foundry agents, evaluation, and hardening tracks.
 
 This lab is intentionally smaller than a production AI platform. The goal is to help beginners learn what each service does, how Terraform deploys it, and how a script calls it.
 
@@ -21,7 +21,10 @@ This lab is intentionally smaller than a production AI platform. The goal is to 
 | Infrastructure as code | Deploy AI services with reusable Terraform modules and feature toggles. |
 | Responsible AI | Review text with Content Safety before wiring model-heavy workflows. |
 | Search and RAG | Optionally deploy Azure AI Search and run a tiny retrieval exercise. |
+| Document intelligence | Extract layout, tables, and document structure from PDF samples. |
+| Agents and evaluation | Design a Foundry agent blueprint, review tool routing, and produce evaluation evidence. |
 | Operations | Use storage, Key Vault, Log Analytics, and Application Insights as AI app foundations. |
+| Security hardening | Optionally add Key Vault secret storage, private endpoints, policies, and cleanup checks. |
 
 ## Architecture
 
@@ -41,8 +44,12 @@ The default deployment creates:
 | AIServices account | Foundry Tools account for Language, Vision, Speech, and Translator exercises | On |
 | Content Safety account | Safety review exercise | On |
 | Azure AI Search | Optional search/RAG exercise | Off |
+| Document Intelligence | Optional document extraction exercise | Off |
 | Azure OpenAI | Optional model deployment for quota-enabled subscriptions | Off |
+| Azure AI Foundry | Optional hub and project for agent/evaluation work | Off |
 | Static Web App | Optional hosted demo placeholder | Off |
+| Private endpoints | Optional advanced network hardening | Off |
+| Monitor alerts | Optional call-volume guardrail alerts | Off |
 
 ## Master Control Panel
 
@@ -52,8 +59,12 @@ Copy `terraform.tfvars.example` to `terraform.tfvars`, then change these flags:
 deploy_ai_services    = true
 deploy_content_safety = true
 deploy_ai_search      = false
+deploy_document_intelligence = false
 deploy_azure_openai   = false
+deploy_ai_foundry     = false
 deploy_app_hosting    = false
+deploy_private_networking = false
+deploy_observability_alerts = false
 ```
 
 Beginner defaults keep cost and quota risk low. Turn on optional components only when the related scenario asks for them.
@@ -116,6 +127,13 @@ Beginner defaults keep cost and quota risk low. Turn on optional components only
 | Translator | `05_translator.py` | Translation endpoint, target languages |
 | Content Safety | `06_content_safety.py` | Harm categories, severities |
 | Optional RAG | `07_search_rag_optional.py` | Search index, tiny document retrieval |
+| Advanced RAG | `08_search_rag_advanced.py` | Vector search, hybrid retrieval, citation sources |
+| Document Intelligence | `09_document_intelligence_layout.py` | Layout extraction, tables, page summaries |
+| Vision analysis | `10_vision_image_analysis.py` | Captions, tags, objects, people, read results |
+| Guardrails | `11_content_safety_guardrails.py` | Prompt Shields and protected material checks |
+| Pronunciation | `12_speech_pronunciation_assessment.py` | Speech scoring and generated evidence audio |
+| Agent blueprint | `13_foundry_agent_blueprint.py` | Foundry-oriented tool catalog and handoff rules |
+| Evaluation | `14_observability_evaluation.py` | Groundedness, latency, and local JSONL evidence |
 
 ## Documentation
 
@@ -130,11 +148,14 @@ Beginner defaults keep cost and quota risk low. Turn on optional components only
 - Testing: `wiki/testing/lab-testing-guide.md`
 - Variables: `wiki/reference/variables.md`
 - Workbook: `wiki/certifications/lab-workbook.md`
+- Advanced tracks: `wiki/advanced-tracks.md`
+- Instructor pack: `wiki/instructor/lesson-plan.md`
 
 ## Cost Notes
 
 - Default services are designed for low-volume learning.
 - Azure AI Search is off by default; the free tier is intended for the optional RAG exercise.
+- Document Intelligence, Foundry, private networking, and monitor alerts are off by default.
 - Azure OpenAI is off by default because it requires access, model quota, and region availability.
 - Always run `terraform destroy` when finished with the lab.
 
@@ -144,7 +165,9 @@ Beginner defaults keep cost and quota risk low. Turn on optional components only
 .
 |-- modules/              # Reusable Terraform modules
 |-- exercises/python/     # Beginner Python exercises
+|-- app/                  # Static scenario console demo
 |-- wiki/                 # Lab documentation
+|-- scripts/              # Repo quality checks
 |-- docs/images/          # SVG diagrams
 |-- policies/             # OPA/Rego policy checks
 |-- tests/                # Go and Python tests
@@ -164,4 +187,3 @@ Beginner defaults keep cost and quota risk low. Turn on optional components only
 ## License
 
 MIT. See [LICENSE](LICENSE).
-

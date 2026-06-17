@@ -57,6 +57,17 @@ output "ai_search_admin_key" {
   sensitive   = true
 }
 
+output "document_intelligence_endpoint" {
+  description = "Endpoint for optional Azure AI Document Intelligence."
+  value       = try(module.document_intelligence[0].endpoint, "")
+}
+
+output "document_intelligence_key" {
+  description = "Primary key for optional Azure AI Document Intelligence."
+  value       = try(module.document_intelligence[0].primary_access_key, "")
+  sensitive   = true
+}
+
 output "azure_openai_endpoint" {
   description = "Endpoint for optional Azure OpenAI."
   value       = try(module.azure_openai[0].endpoint, "")
@@ -73,19 +84,41 @@ output "static_web_app_url" {
   value       = try(module.app_hosting[0].default_host_name, "")
 }
 
+output "foundry_hub_discovery_url" {
+  description = "Optional Foundry hub discovery URL."
+  value       = try(module.ai_foundry[0].hub_discovery_url, "")
+}
+
+output "foundry_project_id" {
+  description = "Optional Foundry project resource ID."
+  value       = try(module.ai_foundry[0].project_id, "")
+}
+
+output "private_endpoint_ids" {
+  description = "Optional private endpoint IDs by target key."
+  value       = try(module.private_networking[0].private_endpoint_ids, {})
+}
+
+output "observability_alert_ids" {
+  description = "Optional Azure Monitor alert IDs by target key."
+  value       = try(module.observability_alerts[0].cognitive_call_volume_alert_ids, {})
+}
+
 output "exercise_environment" {
   description = "Non-secret values to copy into exercises/python/.env."
   value = {
-    AZURE_AI_SERVICES_ENDPOINT = try(module.ai_services[0].endpoint, "")
-    AZURE_AI_SERVICES_REGION   = var.ctx.location
-    CONTENT_SAFETY_ENDPOINT    = try(module.content_safety[0].endpoint, "")
-    AI_SEARCH_ENDPOINT         = try(module.ai_search[0].endpoint, "")
-    AZURE_OPENAI_ENDPOINT      = try(module.azure_openai[0].endpoint, "")
-    AZURE_OPENAI_DEPLOYMENT    = var.openai_deployment_name
-    STATIC_WEB_APP_URL         = try(module.app_hosting[0].default_host_name, "")
-    RESOURCE_GROUP_NAME        = module.core.resource_group_name
-    KEY_VAULT_NAME             = module.core.key_vault_name
-    STORAGE_ACCOUNT_NAME       = module.core.storage_account_name
+    AZURE_AI_SERVICES_ENDPOINT     = try(module.ai_services[0].endpoint, "")
+    AZURE_AI_SERVICES_REGION       = var.ctx.location
+    CONTENT_SAFETY_ENDPOINT        = try(module.content_safety[0].endpoint, "")
+    AI_SEARCH_ENDPOINT             = try(module.ai_search[0].endpoint, "")
+    DOCUMENT_INTELLIGENCE_ENDPOINT = try(module.document_intelligence[0].endpoint, "")
+    AZURE_OPENAI_ENDPOINT          = try(module.azure_openai[0].endpoint, "")
+    AZURE_OPENAI_DEPLOYMENT        = var.openai_deployment_name
+    FOUNDRY_HUB_DISCOVERY_URL      = try(module.ai_foundry[0].hub_discovery_url, "")
+    FOUNDRY_PROJECT_ID             = try(module.ai_foundry[0].project_id, "")
+    STATIC_WEB_APP_URL             = try(module.app_hosting[0].default_host_name, "")
+    RESOURCE_GROUP_NAME            = module.core.resource_group_name
+    KEY_VAULT_NAME                 = module.core.key_vault_name
+    STORAGE_ACCOUNT_NAME           = module.core.storage_account_name
   }
 }
-

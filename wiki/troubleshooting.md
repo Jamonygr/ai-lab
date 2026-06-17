@@ -11,6 +11,10 @@ Use this page when a setup, Terraform, Azure, or exercise step fails.
 | Resource name already exists | Global Azure name collision or soft-deleted account | Rerun with a new random suffix by cleaning state only after confirmed no active resources exist. |
 | Region not supported | Service or model not available in `ctx.location` | Change `ctx.location` to a supported region such as `eastus` or `eastus2`. |
 | Azure OpenAI deployment fails | Missing access, quota, or model availability | Leave `deploy_azure_openai = false` until quota is confirmed. |
+| Document Intelligence apply fails | Region or SKU is unavailable | Try another supported Azure AI region or keep `deploy_document_intelligence = false`. |
+| Foundry apply fails | Provider, region, or connected-resource support differs | Keep `deploy_ai_foundry = false` and use the agent blueprint exercise offline. |
+| Key Vault secrets fail | Terraform identity lacks secret permissions | Leave `store_service_keys_in_key_vault = false` or grant data-plane secret permissions. |
+| Private endpoints make scripts fail | Local machine cannot resolve or reach private DNS | Re-enable public access for beginner scripts or run from a network joined to the VNet. |
 
 ## Azure authentication
 
@@ -82,6 +86,41 @@ Then fill:
 AI_SEARCH_ENDPOINT
 AI_SEARCH_KEY
 AI_SEARCH_INDEX
+```
+
+Advanced RAG also uses `AI_SEARCH_ADVANCED_INDEX`. If vector index creation fails, confirm the Search service API supports vector fields in your region and SDK version.
+
+### Document Intelligence
+
+The Document Intelligence exercise requires:
+
+```hcl
+deploy_document_intelligence = true
+```
+
+Then fill:
+
+```text
+DOCUMENT_INTELLIGENCE_ENDPOINT
+DOCUMENT_INTELLIGENCE_KEY
+DOCUMENT_INTELLIGENCE_SAMPLE_URL
+```
+
+### Foundry agents
+
+The agent blueprint works offline. The optional Azure OpenAI critique requires:
+
+```text
+AZURE_OPENAI_ENDPOINT
+AZURE_OPENAI_KEY
+AZURE_OPENAI_DEPLOYMENT
+```
+
+The optional Foundry identifiers come from:
+
+```text
+FOUNDRY_HUB_DISCOVERY_URL
+FOUNDRY_PROJECT_ID
 ```
 
 ## Cleanup problems

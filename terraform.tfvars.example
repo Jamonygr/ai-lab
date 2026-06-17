@@ -22,8 +22,13 @@ ctx = {
 deploy_ai_services    = true
 deploy_content_safety = true
 deploy_ai_search      = false
+deploy_document_intelligence = false
 deploy_azure_openai   = false
+deploy_ai_foundry     = false
 deploy_app_hosting    = false
+deploy_private_networking = false
+deploy_observability_alerts = false
+store_service_keys_in_key_vault = false
 
 # Keep public endpoints enabled for beginner local Python exercises.
 # Disable this only when adding private networking later.
@@ -37,6 +42,8 @@ enable_foundry_project_management  = true
 ai_services_sku_name    = "S0"
 content_safety_sku_name = "S0"
 ai_search_sku           = "free"
+ai_search_semantic_search_sku = ""
+document_intelligence_sku_name = "S0"
 openai_sku_name         = "S0"
 
 # -----------------------------------------------------------------------------
@@ -50,3 +57,10 @@ openai_model_name      = "gpt-4o-mini"
 openai_model_version   = "2024-07-18"
 openai_model_capacity  = 1
 
+# -----------------------------------------------------------------------------
+# Optional security and observability track
+# -----------------------------------------------------------------------------
+
+private_network_address_space      = ["10.42.0.0/16"]
+private_endpoint_subnet_prefixes   = ["10.42.1.0/24"]
+observability_total_calls_threshold = 100

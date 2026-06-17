@@ -7,8 +7,12 @@ AI Lab is intentionally beginner-friendly, but it still creates real cloud resou
 | Area | Default | Reason |
 |------|---------|--------|
 | Optional Search | Off | Avoids extra cost until the learner reaches RAG. |
+| Optional Document Intelligence | Off | Adds usage-based document analysis only for extraction labs. |
 | Optional Azure OpenAI | Off | Requires access, quota, and region availability. |
+| Optional Foundry | Off | Adds agent and evaluation infrastructure only when needed. |
 | Optional app hosting | Off | Keeps the first run focused on API scripts. |
+| Private endpoints | Off | Avoids networking and DNS complexity for first-time learners. |
+| Service keys in Key Vault | Off | Requires extra RBAC secret permissions. |
 | Public endpoints | On | Makes beginner local scripts work without private networking. |
 | Log Analytics daily quota | 1 GB | Reduces surprise ingestion cost in a lab. |
 | Application Insights daily cap | 1 GB | Protects later app experiments from runaway telemetry. |
@@ -39,6 +43,8 @@ When hardening the lab:
 - Add private DNS and endpoint modules.
 - Add policy checks that fail plans with public endpoints in non-lab environments.
 
+The optional private networking module creates a VNet, private endpoint subnet, private DNS zones, DNS links, and private endpoints for enabled services. It is meant as a teaching track, not a complete production landing zone.
+
 ## Cost controls
 
 Use the Master Control Panel before each apply:
@@ -48,8 +54,12 @@ Use the Master Control Panel before each apply:
 | `deploy_ai_services` | Usage-based calls to Language, Vision, Speech, and Translator. |
 | `deploy_content_safety` | Usage-based Content Safety calls. |
 | `deploy_ai_search` | Free by default, but paid SKUs can cost continuously. |
+| `deploy_document_intelligence` | Usage-based document extraction calls. |
 | `deploy_azure_openai` | Quota-based model deployment and usage charges. |
+| `deploy_ai_foundry` | Hub/project infrastructure and possible connected service use. |
 | `deploy_app_hosting` | Free Static Web App by default. |
+| `deploy_private_networking` | Private endpoints and DNS add networking resources. |
+| `deploy_observability_alerts` | Metric alerts are low cost but still operational resources. |
 
 Recommended lab habits:
 
@@ -86,3 +96,5 @@ terraform plan -out tfplan
 terraform show -json tfplan > tfplan.json
 conftest test tfplan.json --policy policies
 ```
+
+The GitHub Actions workflow also runs `scripts/check_lab_quality.py` to catch tracked generated artifacts, broken local markdown links, and obvious secret-like values.

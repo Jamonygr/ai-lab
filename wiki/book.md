@@ -48,8 +48,12 @@ Default observability resources use small daily caps so later app experiments do
 Enable optional components only when needed:
 
 - `deploy_ai_search = true` for the optional Search/RAG exercise.
+- `deploy_document_intelligence = true` for PDF and form extraction.
 - `deploy_azure_openai = true` only when the subscription has model access and quota.
+- `deploy_ai_foundry = true` for agent and evaluation infrastructure.
 - `deploy_app_hosting = true` for a later web demo path.
+- `deploy_private_networking = true` for a private endpoint hardening lab.
+- `deploy_observability_alerts = true` for call-volume alerting.
 
 ## Chapter 5: Python exercises
 
@@ -63,6 +67,7 @@ The exercises are deliberately small:
 6. Translate text.
 7. Review text with Content Safety.
 8. Optionally search tiny documents.
+9. Optionally run advanced RAG, Document Intelligence, richer Vision, prompt shields, pronunciation assessment, agent blueprint, and evaluation exercises.
 
 Each script should be readable by a beginner without hiding the API call behind too much abstraction.
 
@@ -114,3 +119,5 @@ Good next increments are:
 - Enable Azure AI Search and compare keyword retrieval with grounded answers.
 - Enable Azure OpenAI only after access, quota, and regional model support are confirmed.
 - Add Document Intelligence as a separate module and exercise.
+- Use the static app in `app/` as a lightweight scenario console.
+- Add instructor-led reviews with the quiz and workbook evidence.

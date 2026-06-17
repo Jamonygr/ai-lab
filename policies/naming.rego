@@ -25,3 +25,11 @@ warn[msg] {
     msg := sprintf("Static Web App '%s' is not using the Free tier", [resource.address])
 }
 
+warn[msg] {
+    resource := input.resource_changes[_]
+    resource.type == "azurerm_search_service"
+    resource.change.actions[_] == "create"
+    resource.change.after.semantic_search_sku != null
+    resource.change.after.sku == "free"
+    msg := sprintf("Search service '%s' enables semantic search settings on the free SKU; confirm support before apply", [resource.address])
+}

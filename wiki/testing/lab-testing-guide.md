@@ -29,6 +29,12 @@ python -m venv .venv
 .\.venv\Scripts\python.exe -m pytest tests\python
 ```
 
+Run repo quality checks:
+
+```powershell
+python scripts/check_lab_quality.py
+```
+
 ## Policy checks
 
 The `policies/` folder contains OPA/Rego examples for:
@@ -81,6 +87,18 @@ python exercises/python/06_content_safety.py
 
 Do not run `07_search_rag_optional.py` unless `deploy_ai_search = true` and `AI_SEARCH_ENDPOINT` plus `AI_SEARCH_KEY` are configured.
 
+Advanced smoke tests are opt-in:
+
+| Script | Required configuration |
+|--------|------------------------|
+| `08_search_rag_advanced.py` | `deploy_ai_search = true` |
+| `09_document_intelligence_layout.py` | `deploy_document_intelligence = true` |
+| `10_vision_image_analysis.py` | Default AIServices |
+| `11_content_safety_guardrails.py` | Default Content Safety |
+| `12_speech_pronunciation_assessment.py` | Default AIServices and Speech SDK dependency |
+| `13_foundry_agent_blueprint.py` | Optional Foundry/OpenAI values for full mode |
+| `14_observability_evaluation.py` | No cloud required for local evidence |
+
 ## Teardown check
 
 Run:
@@ -104,3 +122,5 @@ Expected results:
 ## Current validation notes
 
 The default path has been exercised successfully with Terraform 1.12.0, Azure CLI 2.83.0, Python 3.8, and AzureRM provider 4.77.0. Local Go execution requires Go to be installed; the GitHub Actions workflow installs Go for CI.
+
+CI validates Terraform formatting, Terraform init/validate, Python tests, Go skip-safe tests, and repo quality checks. Live Azure apply is intentionally not run in CI because it needs subscription credentials and may create billable resources.

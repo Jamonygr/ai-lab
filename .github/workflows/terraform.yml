@@ -45,6 +45,20 @@ jobs:
       - name: Run Python tests
         run: python -m pytest tests/python
 
+  repo-quality:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Run repo quality checks
+        run: python scripts/check_lab_quality.py
+
   go-live-skip-safe:
     runs-on: ubuntu-latest
     steps:

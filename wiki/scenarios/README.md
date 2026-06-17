@@ -4,7 +4,7 @@
   <img src="../../docs/images/lab-scenarios.svg" alt="AI Lab scenario map" width="1000" />
 </p>
 
-Run the scenarios in order. The first six use the default deployment.
+Run the scenarios in order. The first six use the default deployment. Advanced scenarios are opt-in and should be enabled one track at a time.
 
 ## Scenario 0: Setup check
 
@@ -118,3 +118,99 @@ Tasks:
 - Search the index before answering a question.
 
 Clean up optional Search resources by running `terraform destroy` or by turning `deploy_ai_search = false` and applying again.
+
+## Scenario 8: Advanced Search/RAG
+
+Script: `exercises/python/08_search_rag_advanced.py`
+
+Required flag:
+
+```hcl
+deploy_ai_search = true
+```
+
+Tasks:
+
+- Create an index with text, metadata, and vector fields.
+- Upload tiny lab documents with deterministic demo vectors.
+- Run a hybrid keyword/vector query.
+- Print citation sources next to retrieved content.
+
+## Scenario 9: Document Intelligence
+
+Script: `exercises/python/09_document_intelligence_layout.py`
+
+Required flag:
+
+```hcl
+deploy_document_intelligence = true
+```
+
+Tasks:
+
+- Analyze a sample PDF with the prebuilt layout model.
+- Count pages, paragraphs, and tables.
+- Review how structured extraction differs from OCR.
+
+## Scenario 10: Vision analysis upgrade
+
+Script: `exercises/python/10_vision_image_analysis.py`
+
+Tasks:
+
+- Request captions, tags, objects, people, and read results.
+- Compare image-level descriptions with OCR text.
+- Decide which visual outputs are useful evidence for an app.
+
+## Scenario 11: Advanced Content Safety guardrails
+
+Script: `exercises/python/11_content_safety_guardrails.py`
+
+Tasks:
+
+- Submit a prompt-attack sample to Prompt Shields.
+- Submit a text sample to protected material detection.
+- Convert the response into an allow, review, or block decision.
+
+## Scenario 12: Pronunciation assessment
+
+Script: `exercises/python/12_speech_pronunciation_assessment.py`
+
+Tasks:
+
+- Generate a short reference audio file.
+- Run pronunciation assessment against the reference text.
+- Review accuracy, fluency, completeness, and pronunciation scores.
+
+## Scenario 13: Foundry agent blueprint
+
+Script: `exercises/python/13_foundry_agent_blueprint.py`
+
+Optional flags:
+
+```hcl
+deploy_ai_foundry   = true
+deploy_azure_openai = true
+```
+
+Tasks:
+
+- Review the agent instructions, tool catalog, and handoff rules.
+- Optionally ask an Azure OpenAI deployment to critique the blueprint.
+- Discuss what traces and evaluations should exist before production use.
+
+## Scenario 14: Observability and evaluation
+
+Script: `exercises/python/14_observability_evaluation.py`
+
+Optional flag:
+
+```hcl
+deploy_observability_alerts = true
+```
+
+Tasks:
+
+- Generate a local evaluation JSONL file.
+- Review groundedness rate and latency evidence.
+- Connect the same metric ideas to Application Insights and Foundry evaluation.

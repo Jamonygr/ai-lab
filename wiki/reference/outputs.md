@@ -20,9 +20,15 @@
 | `content_safety_key` | Sensitive key for Content Safety. |
 | `ai_search_endpoint` | Optional Azure AI Search endpoint. |
 | `ai_search_admin_key` | Optional sensitive Search admin key. |
+| `document_intelligence_endpoint` | Optional Document Intelligence endpoint. |
+| `document_intelligence_key` | Optional sensitive Document Intelligence key. |
 | `azure_openai_endpoint` | Optional Azure OpenAI endpoint. |
 | `azure_openai_key` | Optional sensitive Azure OpenAI key. |
 | `static_web_app_url` | Optional Static Web App hostname. |
+| `foundry_hub_discovery_url` | Optional Foundry hub discovery URL. |
+| `foundry_project_id` | Optional Foundry project resource ID. |
+| `private_endpoint_ids` | Optional private endpoint IDs by target key. |
+| `observability_alert_ids` | Optional Azure Monitor alert IDs by target key. |
 
 ## Environment helper
 
@@ -42,6 +48,7 @@ Optional setup commands:
 
 ```powershell
 terraform output -raw ai_search_admin_key
+terraform output -raw document_intelligence_key
 terraform output -raw azure_openai_key
 ```
 
