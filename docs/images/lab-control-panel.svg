@@ -1,0 +1,47 @@
+<svg width="1200" height="620" viewBox="0 0 1200 620" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">AI Lab control panel</title>
+  <desc id="desc">Visual guide to Terraform feature toggles, showing default-on services, optional learning tracks, and cost or quota-sensitive choices.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.title{font:700 30px Segoe UI,Arial,sans-serif;fill:#0f172a}.sub{font:15px Segoe UI,Arial,sans-serif;fill:#475569}.panel{fill:#fff;stroke:#b8d1e7;stroke-width:1.4}.on{fill:#ecfdf5;stroke:#16a34a;stroke-width:1.4}.off{fill:#f8fafc;stroke:#94a3b8;stroke-width:1.4}.warn{fill:#fff7ed;stroke:#f97316;stroke-width:1.4}.hard{fill:#f5f3ff;stroke:#7c3aed;stroke-width:1.4}.h{font:700 16px Segoe UI,Arial,sans-serif;fill:#111827}.h2{font:700 12px Segoe UI,Arial,sans-serif;fill:#1f2937}.t{font:12px Segoe UI,Arial,sans-serif;fill:#334155}.tiny{font:10.5px Segoe UI,Arial,sans-serif;fill:#475569}.code{font:12px Consolas,monospace;fill:#334155}.pill{font:700 11px Segoe UI,Arial,sans-serif;fill:#fff;text-anchor:middle;dominant-baseline:central}.arrow{stroke:#64748b;stroke-width:2;fill:none;marker-end:url(#arrow)}
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth"><path d="M0 0 10 5 0 10Z" fill="#64748b"/></marker>
+    <symbol id="toggle-on" viewBox="0 0 70 34"><rect x="2" y="5" width="62" height="24" rx="12" fill="#22c55e"/><circle cx="50" cy="17" r="9" fill="#fff"/></symbol>
+    <symbol id="toggle-off" viewBox="0 0 70 34"><rect x="2" y="5" width="62" height="24" rx="12" fill="#cbd5e1"/><circle cx="16" cy="17" r="9" fill="#fff"/></symbol>
+    <symbol id="icon-ai" viewBox="0 0 36 36"><rect x="6" y="6" width="24" height="24" rx="7" fill="#2dd4bf"/><path d="M13 25V12h5c3.5 0 5.5 2.7 5.5 6.5S21.5 25 18 25h-5Z" fill="#ecfeff"/></symbol>
+    <symbol id="icon-search" viewBox="0 0 36 36"><circle cx="16" cy="16" r="9" fill="#60a5fa" stroke="#1d4ed8" stroke-width="2.2"/><path d="m23 23 8 8" stroke="#1d4ed8" stroke-width="3.5" stroke-linecap="round"/></symbol>
+    <symbol id="icon-warn" viewBox="0 0 36 36"><path d="M18 4 33 31H3L18 4Z" fill="#fb923c"/><path d="M18 13v9" stroke="#fff" stroke-width="3" stroke-linecap="round"/><circle cx="18" cy="27" r="2" fill="#fff"/></symbol>
+    <symbol id="icon-lock" viewBox="0 0 36 36"><rect x="8" y="16" width="20" height="16" rx="3" fill="#0f766e"/><path d="M13 16v-4a5 5 0 0 1 10 0v4" stroke="#99f6e4" stroke-width="3" fill="none"/></symbol>
+  </defs>
+  <rect width="1200" height="620" class="bg"/>
+  <text x="44" y="50" class="title">Terraform Master Control Panel</text>
+  <text x="46" y="80" class="sub">Use feature flags to keep the first class low-cost, then turn on advanced services only when the lesson requires them.</text>
+
+  <rect x="56" y="122" width="320" height="404" rx="10" class="panel"/>
+  <text x="88" y="158" class="h">Default teaching path</text>
+  <text x="88" y="184" class="t">Enough for the first six exercises.</text>
+  <rect x="88" y="218" width="250" height="58" rx="6" class="on"/><use href="#toggle-on" x="100" y="230" width="56" height="28"/><use href="#icon-ai" x="166" y="231" width="28" height="28"/><text x="206" y="241" class="h2">deploy_ai_services</text><text x="206" y="260" class="tiny">Language, Vision, Speech</text>
+  <rect x="88" y="296" width="250" height="58" rx="6" class="on"/><use href="#toggle-on" x="100" y="308" width="56" height="28"/><use href="#icon-warn" x="166" y="309" width="28" height="28"/><text x="206" y="319" class="h2">deploy_content_safety</text><text x="206" y="338" class="tiny">Responsible AI review exercises</text>
+  <rect x="88" y="374" width="250" height="58" rx="6" class="on"/><use href="#toggle-on" x="100" y="386" width="56" height="28"/><text x="166" y="398" class="h2">Core platform</text><text x="166" y="417" class="tiny">Storage, Key Vault, logs, app insights</text>
+  <rect x="88" y="458" width="250" height="38" rx="6" fill="#dcfce7"/><text x="116" y="482" class="h2">Recommended for session 1</text>
+
+  <rect x="440" y="122" width="320" height="404" rx="10" class="panel"/>
+  <text x="472" y="158" class="h">Optional lesson tracks</text>
+  <text x="472" y="184" class="t">Enable one track at a time for clarity.</text>
+  <rect x="472" y="218" width="250" height="52" rx="6" class="off"/><use href="#toggle-off" x="484" y="229" width="56" height="28"/><use href="#icon-search" x="550" y="229" width="28" height="28"/><text x="590" y="241" class="h2">deploy_ai_search</text><text x="590" y="260" class="tiny">RAG and retrieval</text>
+  <rect x="472" y="288" width="250" height="52" rx="6" class="off"/><use href="#toggle-off" x="484" y="299" width="56" height="28"/><text x="550" y="307" class="h2">deploy_document</text><text x="550" y="322" class="h2">_intelligence</text><text x="550" y="336" class="tiny">PDF and layout extraction</text>
+  <rect x="472" y="358" width="250" height="52" rx="6" class="warn"/><use href="#toggle-off" x="484" y="369" width="56" height="28"/><use href="#icon-warn" x="550" y="369" width="28" height="28"/><text x="590" y="381" class="h2">deploy_azure_openai</text><text x="590" y="400" class="tiny">Requires access, quota, region support</text>
+  <rect x="472" y="428" width="250" height="52" rx="6" class="off"/><use href="#toggle-off" x="484" y="439" width="56" height="28"/><text x="550" y="451" class="h2">deploy_ai_foundry</text><text x="550" y="470" class="tiny">Agents and evaluation</text>
+
+  <rect x="824" y="122" width="320" height="404" rx="10" class="panel"/>
+  <text x="856" y="158" class="h">Hardening and operations</text>
+  <text x="856" y="184" class="t">Use after learners understand basics.</text>
+  <rect x="856" y="218" width="250" height="52" rx="6" class="hard"/><use href="#toggle-off" x="868" y="229" width="56" height="28"/><use href="#icon-lock" x="934" y="229" width="28" height="28"/><text x="974" y="237" class="h2">deploy_private</text><text x="974" y="252" class="h2">_networking</text><text x="974" y="266" class="tiny">VNet, endpoints, DNS</text>
+  <rect x="856" y="288" width="250" height="52" rx="6" class="off"/><use href="#toggle-off" x="868" y="299" width="56" height="28"/><text x="934" y="307" class="h2">store_service_keys</text><text x="934" y="322" class="h2">_in_key_vault</text><text x="934" y="336" class="tiny">Requires Key Vault permissions</text>
+  <rect x="856" y="358" width="250" height="52" rx="6" class="off"/><use href="#toggle-off" x="868" y="369" width="56" height="28"/><text x="934" y="377" class="h2">deploy_observability</text><text x="934" y="392" class="h2">_alerts</text><text x="934" y="406" class="tiny">TotalCalls metric alerts</text>
+  <rect x="856" y="428" width="250" height="52" rx="6" class="off"/><use href="#toggle-off" x="868" y="439" width="56" height="28"/><text x="934" y="451" class="h2">deploy_app_hosting</text><text x="934" y="470" class="tiny">Static Web App demo</text>
+
+  <path class="arrow" d="M376 324H440"/><path class="arrow" d="M760 324H824"/>
+  <rect x="246" y="560" width="708" height="38" rx="8" fill="#eff6ff" stroke="#bfdbfe"/>
+  <text x="278" y="584" class="code">Default: true, true, false, false, false, false, false, false, false</text>
+</svg>

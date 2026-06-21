@@ -1,0 +1,41 @@
+<svg width="1200" height="620" viewBox="0 0 1200 620" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">AI Lab exercise journey map</title>
+  <desc id="desc">A learner journey from setup through basic Azure AI services and optional advanced tracks.</desc>
+  <defs>
+    <style>
+      .bg{fill:#fff}.title{font:700 30px Segoe UI,Arial,sans-serif;fill:#0f172a}.sub{font:15px Segoe UI,Arial,sans-serif;fill:#475569}.band{fill:#eef6ff;stroke:#93c5fd;stroke-width:1.4}.node{fill:#fff;stroke:#9ec9ea;stroke-width:1.4}.node2{fill:#fff;stroke:#86c99a;stroke-width:1.4}.node3{fill:#fff;stroke:#e3b967;stroke-width:1.4}.node4{fill:#fff;stroke:#c0a7ec;stroke-width:1.4}.head{font:700 14px Segoe UI,Arial,sans-serif;fill:#111827}.t{font:12px Segoe UI,Arial,sans-serif;fill:#334155}.small{font:10.5px Segoe UI,Arial,sans-serif;fill:#475569}.num{font:700 11px Segoe UI,Arial,sans-serif;fill:#fff;text-anchor:middle;dominant-baseline:central}.arrow{stroke:#64748b;stroke-width:2;fill:none;marker-end:url(#arrow)}.dash{stroke:#64748b;stroke-width:1.8;fill:none;stroke-dasharray:6 5;marker-end:url(#arrow)}
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth"><path d="M0 0 10 5 0 10Z" fill="#64748b"/></marker>
+    <symbol id="language" viewBox="0 0 36 36"><rect x="6" y="8" width="24" height="18" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/><path d="M12 15h12M12 20h8" stroke="#2563eb" stroke-width="2"/></symbol>
+    <symbol id="vision" viewBox="0 0 36 36"><path d="M4 18s5-9 14-9 14 9 14 9-5 9-14 9S4 18 4 18Z" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/><circle cx="18" cy="18" r="5" fill="#16a34a"/></symbol>
+    <symbol id="speech" viewBox="0 0 36 36"><path d="M14 10a4 4 0 0 1 8 0v8a4 4 0 0 1-8 0v-8Z" fill="#fef3c7" stroke="#d97706" stroke-width="2"/><path d="M9 18c0 5 4 9 9 9s9-4 9-9M18 27v5" stroke="#d97706" stroke-width="2.2" stroke-linecap="round"/></symbol>
+    <symbol id="safety" viewBox="0 0 36 36"><path d="M18 3 31 9v9c0 8-5.5 13-13 16C10.5 31 5 26 5 18V9l13-6Z" fill="#fb923c"/><path d="M18 11v10" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/><circle cx="18" cy="26" r="2" fill="#fff"/></symbol>
+    <symbol id="search" viewBox="0 0 36 36"><circle cx="16" cy="16" r="9" fill="#60a5fa" stroke="#1d4ed8" stroke-width="2.2"/><path d="m23 23 8 8" stroke="#1d4ed8" stroke-width="3.5" stroke-linecap="round"/></symbol>
+    <symbol id="doc" viewBox="0 0 36 36"><path d="M10 4h13l6 6v22H10V4Z" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/><path d="M23 4v7h6M15 18h10M15 24h10" stroke="#2563eb" stroke-width="2"/></symbol>
+    <symbol id="agent" viewBox="0 0 36 36"><path d="M18 4 32 18 18 32 4 18 18 4Z" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/><path d="M18 11v14M11 18h14" stroke="#7c3aed" stroke-width="2.5" stroke-linecap="round"/></symbol>
+  </defs>
+  <rect width="1200" height="620" class="bg"/>
+  <text x="44" y="50" class="title">Learner Exercise Journey</text>
+  <text x="46" y="80" class="sub">A visual path instructors can use to explain what learners do first, what unlocks later, and where evidence should be captured.</text>
+  <rect x="58" y="124" width="1084" height="170" rx="14" class="band"/>
+  <text x="86" y="158" class="head">Core class path</text>
+  <path class="arrow" d="M184 216H242M368 216H426M552 216H610M736 216H794M920 216H978"/>
+  <rect x="82" y="178" width="102" height="76" rx="8" class="node"/><circle cx="102" cy="196" r="11" fill="#2563eb"/><text x="102" y="196" class="num">00</text><text x="124" y="201" class="head">Setup</text><text x="104" y="230" class="t">Check .env</text>
+  <rect x="242" y="178" width="126" height="76" rx="8" class="node"/><use href="#language" x="260" y="191" width="30" height="30"/><text x="300" y="201" class="head">Language</text><text x="300" y="230" class="t">Sentiment, PII</text>
+  <rect x="426" y="178" width="126" height="76" rx="8" class="node2"/><use href="#vision" x="444" y="191" width="30" height="30"/><text x="484" y="201" class="head">Vision</text><text x="484" y="230" class="t">OCR</text>
+  <rect x="610" y="178" width="126" height="76" rx="8" class="node3"/><use href="#speech" x="628" y="191" width="30" height="30"/><text x="668" y="201" class="head">Speech</text><text x="668" y="230" class="t">Text to speech</text>
+  <rect x="794" y="178" width="126" height="76" rx="8" class="node4"/><use href="#language" x="812" y="191" width="30" height="30"/><text x="852" y="201" class="head">Translate</text><text x="852" y="230" class="t">Languages</text>
+  <rect x="978" y="178" width="126" height="76" rx="8" class="node3"/><use href="#safety" x="996" y="191" width="30" height="30"/><text x="1036" y="201" class="head">Safety</text><text x="1036" y="230" class="t">Review text</text>
+
+  <rect x="58" y="342" width="1084" height="196" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.4"/>
+  <text x="86" y="376" class="head">Optional extension tracks</text>
+  <path class="dash" d="M210 438H304M430 438H524M650 438H744M870 438H964"/>
+  <rect x="86" y="400" width="124" height="84" rx="8" class="node"/><use href="#search" x="104" y="415" width="32" height="32"/><text x="146" y="424" class="head">RAG</text><text x="146" y="448" class="t">Search index</text><text x="146" y="468" class="small">07-08</text>
+  <rect x="304" y="400" width="126" height="84" rx="8" class="node"/><use href="#doc" x="322" y="415" width="32" height="32"/><text x="364" y="424" class="head">Documents</text><text x="364" y="448" class="t">Layout extract</text><text x="364" y="468" class="small">09</text>
+  <rect x="524" y="400" width="126" height="84" rx="8" class="node2"/><use href="#vision" x="542" y="415" width="32" height="32"/><text x="584" y="424" class="head">Vision+</text><text x="584" y="448" class="t">Tags, objects</text><text x="584" y="468" class="small">10</text>
+  <rect x="744" y="400" width="126" height="84" rx="8" class="node4"/><use href="#agent" x="762" y="415" width="32" height="32"/><text x="804" y="424" class="head">Foundry</text><text x="804" y="448" class="t">Agent plan</text><text x="804" y="468" class="small">13</text>
+  <rect x="964" y="400" width="126" height="84" rx="8" class="node3"/><use href="#safety" x="982" y="415" width="32" height="32"/><text x="1024" y="424" class="head">Evaluate</text><text x="1024" y="448" class="t">Evidence</text><text x="1024" y="468" class="small">14</text>
+
+  <rect x="320" y="560" width="560" height="34" rx="8" fill="#ecfdf5" stroke="#bbf7d0"/>
+  <text x="356" y="582" class="t">Instructor cue: every stop should produce either terminal output, portal evidence, workbook notes, or a cleanup check.</text>
+</svg>
