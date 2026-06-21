@@ -24,6 +24,7 @@
 | `deploy_private_networking` | `false` | Optional VNet, private DNS, and private endpoints. |
 | `deploy_observability_alerts` | `false` | Optional Azure Monitor call-volume alerts. |
 | `store_service_keys_in_key_vault` | `false` | Optional Key Vault secret storage for service keys. |
+| `grant_deployer_key_vault_secret_permissions` | `false` | Optional Key Vault Secrets Officer role assignment for the current Terraform deployer during live validation. |
 | `enable_public_network_access` | `true` | Public endpoints for beginner local scripts. |
 | `enable_foundry_project_management` | `true` | Enables project management on the AIServices account where supported. |
 
@@ -73,4 +74,4 @@ Azure OpenAI availability is subscription, quota, model, and region dependent. A
 | `private_endpoint_subnet_prefixes` | `["10.42.1.0/24"]` | Subnet prefixes for private endpoints. |
 | `observability_total_calls_threshold` | `100` | Total calls alert threshold over the monitor window. |
 
-`store_service_keys_in_key_vault = true` requires the Terraform identity to have Key Vault data-plane permissions for secrets because the lab Key Vault uses RBAC authorization.
+`store_service_keys_in_key_vault = true` requires the Terraform identity to have Key Vault data-plane permissions for secrets because the lab Key Vault uses RBAC authorization. For disposable live validation runs, set `grant_deployer_key_vault_secret_permissions = true` so Terraform assigns the current deployer `Key Vault Secrets Officer` on the lab Key Vault before writing secrets.

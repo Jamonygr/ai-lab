@@ -92,6 +92,12 @@ variable "store_service_keys_in_key_vault" {
   default     = false
 }
 
+variable "grant_deployer_key_vault_secret_permissions" {
+  description = "Grant the current Terraform deployer Key Vault Secrets Officer on the lab Key Vault before writing service keys. Intended for live validation runs."
+  type        = bool
+  default     = false
+}
+
 variable "enable_foundry_project_management" {
   description = "Enable project management on the AIServices account where supported."
   type        = bool

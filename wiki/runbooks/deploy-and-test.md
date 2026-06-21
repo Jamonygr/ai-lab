@@ -2,6 +2,8 @@
 
 Use this runbook for a complete beginner-safe validation pass. The default deployment creates the core platform, AIServices, and Content Safety. Optional Search, OpenAI, and app hosting stay off until you enable them.
 
+For an automated extended-safe provision, smoke test, and destroy pass, see [Live provisioning validation](../testing/live-provisioning-validation.md).
+
 ## 1. Prerequisites
 
 Install and sign in:

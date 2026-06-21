@@ -29,6 +29,7 @@ deploy_app_hosting    = false
 deploy_private_networking = false
 deploy_observability_alerts = false
 store_service_keys_in_key_vault = false
+grant_deployer_key_vault_secret_permissions = false
 
 # Keep public endpoints enabled for beginner local Python exercises.
 # Disable this only when adding private networking later.

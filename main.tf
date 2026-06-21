@@ -1,3 +1,5 @@
+data "azurerm_client_config" "current" {}
+
 module "core" {
   source = "./modules/core"
 
@@ -129,6 +131,21 @@ module "observability_alerts" {
   tags                      = local.tags
 }
 
+resource "azurerm_role_assignment" "deployer_key_vault_secrets_officer" {
+  count = var.grant_deployer_key_vault_secret_permissions && var.store_service_keys_in_key_vault ? 1 : 0
+
+  scope                = module.core.key_vault_id
+  role_definition_name = "Key Vault Secrets Officer"
+  principal_id         = data.azurerm_client_config.current.object_id
+}
+
+resource "time_sleep" "wait_for_key_vault_rbac" {
+  count = var.grant_deployer_key_vault_secret_permissions && var.store_service_keys_in_key_vault ? 1 : 0
+
+  create_duration = "45s"
+  depends_on      = [azurerm_role_assignment.deployer_key_vault_secrets_officer]
+}
+
 resource "azurerm_key_vault_secret" "ai_services_key" {
   count        = var.store_service_keys_in_key_vault && var.deploy_ai_services ? 1 : 0
   name         = "ai-services-key"
@@ -136,6 +153,8 @@ resource "azurerm_key_vault_secret" "ai_services_key" {
   key_vault_id = module.core.key_vault_id
   content_type = "Azure AI Services primary key"
   tags         = local.tags
+
+  depends_on = [time_sleep.wait_for_key_vault_rbac]
 }
 
 resource "azurerm_key_vault_secret" "content_safety_key" {
@@ -145,6 +164,8 @@ resource "azurerm_key_vault_secret" "content_safety_key" {
   key_vault_id = module.core.key_vault_id
   content_type = "Content Safety primary key"
   tags         = local.tags
+
+  depends_on = [time_sleep.wait_for_key_vault_rbac]
 }
 
 resource "azurerm_key_vault_secret" "document_intelligence_key" {
@@ -154,6 +175,8 @@ resource "azurerm_key_vault_secret" "document_intelligence_key" {
   key_vault_id = module.core.key_vault_id
   content_type = "Document Intelligence primary key"
   tags         = local.tags
+
+  depends_on = [time_sleep.wait_for_key_vault_rbac]
 }
 
 resource "azurerm_key_vault_secret" "ai_search_key" {
@@ -163,6 +186,8 @@ resource "azurerm_key_vault_secret" "ai_search_key" {
   key_vault_id = module.core.key_vault_id
   content_type = "Azure AI Search admin key"
   tags         = local.tags
+
+  depends_on = [time_sleep.wait_for_key_vault_rbac]
 }
 
 resource "azurerm_key_vault_secret" "azure_openai_key" {
@@ -172,4 +197,6 @@ resource "azurerm_key_vault_secret" "azure_openai_key" {
   key_vault_id = module.core.key_vault_id
   content_type = "Azure OpenAI primary key"
   tags         = local.tags
+
+  depends_on = [time_sleep.wait_for_key_vault_rbac]
 }

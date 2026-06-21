@@ -15,6 +15,8 @@ The GitHub Actions workflow keeps the repository safe without creating Azure res
 
 CI does not run `terraform apply` because the lab can create billable Azure resources and requires subscription credentials. Use the deploy runbook for live validation.
 
+For a local disposable live run that provisions, smoke tests, and destroys the extended-safe profile, use [Live provisioning validation](../testing/live-provisioning-validation.md).
+
 ## Local pre-push checklist
 
 ```powershell

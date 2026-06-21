@@ -12,16 +12,23 @@ REQUIRED = [
 OPTIONAL = [
     "AI_SEARCH_ENDPOINT",
     "AI_SEARCH_KEY",
+    "AI_SEARCH_INDEX",
     "AI_SEARCH_ADVANCED_INDEX",
     "DOCUMENT_INTELLIGENCE_ENDPOINT",
     "DOCUMENT_INTELLIGENCE_KEY",
     "DOCUMENT_INTELLIGENCE_SAMPLE_URL",
+    "VISION_SAMPLE_URL",
     "AZURE_OPENAI_ENDPOINT",
     "AZURE_OPENAI_KEY",
     "AZURE_OPENAI_DEPLOYMENT",
     "FOUNDRY_HUB_DISCOVERY_URL",
     "FOUNDRY_PROJECT_ID",
+    "APPLICATIONINSIGHTS_CONNECTION_STRING",
 ]
+
+
+def is_sensitive(name: str) -> bool:
+    return name.endswith("_KEY") or name.endswith("_CONNECTION_STRING")
 
 
 def main() -> None:
@@ -31,7 +38,7 @@ def main() -> None:
     print("Required AI Lab settings:")
     for name in REQUIRED:
         value = values[name]
-        if name.endswith("_KEY"):
+        if is_sensitive(name):
             value = redact(value)
         print(f"  {name}={value}")
 
@@ -42,7 +49,7 @@ def main() -> None:
         value = os.getenv(name, "").strip()
         if not value or value.startswith("<"):
             value = "(not configured)"
-        elif name.endswith("_KEY"):
+        elif is_sensitive(name):
             value = redact(value)
         print(f"  {name}={value}")
 

@@ -42,6 +42,7 @@ AI Lab is a beginner Azure AI lab that follows the same Terraform-first pattern 
 | [Teardown runbook](runbooks/teardown.md) | How to destroy Azure resources and clean local secret-bearing artifacts. |
 | [Scenarios](scenarios/README.md) | Hands-on beginner exercises and optional add-ons. |
 | [Lab testing guide](testing/lab-testing-guide.md) | How to validate Terraform, Python, and live Azure resources. |
+| [Live provisioning validation](testing/live-provisioning-validation.md) | Disposable provision, smoke test, destroy, and verification flow. |
 | [Security and cost guide](security-and-cost.md) | Defaults, secrets, public access, cost controls, and policy checks. |
 | [Troubleshooting](troubleshooting.md) | Common failures and fixes for Terraform, Azure, Python, and exercises. |
 | [Advanced tracks](advanced-tracks.md) | Detailed map for all optional enrichment tracks. |

@@ -2,6 +2,8 @@
 
 Use this checklist before and after deploying the lab.
 
+For a disposable end-to-end Azure run that provisions the extended-safe profile, runs smoke tests, and destroys the environment automatically, use [Live provisioning validation](live-provisioning-validation.md).
+
 ## Static checks
 
 Run from the repository root:
